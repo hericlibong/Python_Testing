@@ -76,6 +76,12 @@ def purchasePlaces():
     if not competition or not club:
         flash("An error occurred. Please try again.")
         return redirect(url_for('index'))
+    
+    # Convertir la date de la compétition et vérifier si elle est passée
+    competition_date = datetime.strptime(competition['date'], "%Y-%m-%d %H:%M:%S")
+    if competition_date < datetime.now():
+        flash("This competition has already taken place. No reservations allowed.")
+        return render_template('welcome.html', club=club, competitions=competitions)
 
     # Vérification des places et des points disponibles
     club_points = int(club['points'])
