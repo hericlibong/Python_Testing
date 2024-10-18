@@ -26,7 +26,7 @@
     {% for competition in competitions %}
         <li>
             {{ competition['name'] }} - Date: {{ competition['date'] }} - Places: {{ competition['numberOfPlaces'] }}
-            <a href="{{ url_for('book', competition=competition['name'], club=club['name']) }}">Book Places</a>
+            <a href="{{ url_for('book', competition=competition['name'].replace(' ', '-'), club=club['name'].replace(' ', '-')) }}">Book Places</a>
         </li>
     {% endfor %}
 </ul>
