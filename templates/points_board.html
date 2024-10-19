@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Points Display Board</title>
+</head>
+<body>
+    
+    <h1>Club Points Board</h1>
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('index') }}">Secretary Login</a></li>
+            
+        </ul>
+    </nav>
+    <table border="1" readonly>
+              <tr>
+
+                <th>Club Name</th>
+
+                 <th>Points Available</th>
+
+              </tr>
+
+           </thead>
+
+            <tbody>
+
+                 {% for club in clubs %}
+
+                      <tr>
+
+                           <td>{{ club['name'] }}</td>
+
+                            <td>{{ club['points'] }}</td>
+
+                         </tr>
+
+                      {% endfor %}
+
+                   
+        </tbody>
+    </table>
+    
+</body>
+</html>

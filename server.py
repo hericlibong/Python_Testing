@@ -95,13 +95,11 @@ def purchasePlaces():
     
     return render_template('welcome.html', club=club, competitions=competitions)
 
+# Route pour afficher le tableau des points
+@app.route('/pointBoard')
+def pointBoard():
+    return render_template('points_board.html', clubs=clubs)
 
-
-
-
-
-
-# TODO: Add route for points display
 
 
 @app.route('/logout')
