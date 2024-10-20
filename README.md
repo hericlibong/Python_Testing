@@ -44,6 +44,9 @@
      ```bash
      locust -f locustfile.py
      ```
+    **Locust Performance Report**
+    You can view the [Locust performance report for 75 users](locust_reports/locust_report.html).
+
 
 7. Current Setup
    [Maintained as-is]
