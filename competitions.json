@@ -19,6 +19,136 @@
             "name": "Summer Bash",
             "date": "2025-01-15 09:00:00",
             "numberOfPlaces": "8"
+        },
+        {
+            "name": "Ironman Challenge",
+            "date": "2024-11-12 09:00:00",
+            "numberOfPlaces": "30"
+        },
+        {
+            "name": "Power Lift Showdown",
+            "date": "2025-04-18 14:00:00",
+            "numberOfPlaces": "12"
+        },
+        {
+            "name": "Max Strength Meet",
+            "date": "2024-07-15 11:00:00",
+            "numberOfPlaces": "10"
+        },
+        {
+            "name": "Strongman Competition",
+            "date": "2023-09-25 16:00:00",
+            "numberOfPlaces": "20"
+        },
+        {
+            "name": "Endurance Race",
+            "date": "2022-08-20 10:30:00",
+            "numberOfPlaces": "15"
+        },
+        {
+            "name": "Beast Showdown",
+            "date": "2024-11-10 12:00:00",
+            "numberOfPlaces": "22"
+        },
+        {
+            "name": "Alpha Power Meet",
+            "date": "2025-02-28 09:00:00",
+            "numberOfPlaces": "25"
+        },
+        {
+            "name": "Muscle Mania",
+            "date": "2024-11-10 13:00:00",
+            "numberOfPlaces": "12"
+        },
+        {
+            "name": "Pump Showdown",
+            "date": "2021-05-20 12:00:00",
+            "numberOfPlaces": "18"
+        },
+        {
+            "name": "Flex Marathon",
+            "date": "2020-02-14 10:00:00",
+            "numberOfPlaces": "10"
+        },
+        {
+            "name": "Strength Fest",
+            "date": "2024-10-18 14:00:00",
+            "numberOfPlaces": "20"
+        },
+        {
+            "name": "Warrior Lift",
+            "date": "2023-06-22 11:00:00",
+            "numberOfPlaces": "18"
+        },
+        {
+            "name": "Gains Showdown",
+            "date": "2025-03-01 15:00:00",
+            "numberOfPlaces": "14"
+        },
+        {
+            "name": "Liftathon",
+            "date": "2023-12-05 09:00:00",
+            "numberOfPlaces": "16"
+        },
+        {
+            "name": "Titan Challenge",
+            "date": "2025-09-28 10:30:00",
+            "numberOfPlaces": "10"
+        },
+        {
+            "name": "Pump Wars",
+            "date": "2025-06-22 16:00:00",
+            "numberOfPlaces": "19"
+        },
+        {
+            "name": "Elite Strength Meet",
+            "date": "2024-08-09 14:00:00",
+            "numberOfPlaces": "13"
+        },
+        {
+            "name": "Ultimate Flex Challenge",
+            "date": "2024-12-30 11:30:00",
+            "numberOfPlaces": "17"
+        },
+        {
+            "name": "Power Surge Invitational",
+            "date": "2024-11-22 13:00:00",
+            "numberOfPlaces": "8"
+        },
+        {
+            "name": "Gain Fest",
+            "date": "2025-07-12 10:00:00",
+            "numberOfPlaces": "15"
+        },
+        {
+            "name": "Beast Power Clash",
+            "date": "2020-06-01 14:00:00",
+            "numberOfPlaces": "20"
+        },
+        {
+            "name": "Bulk Bash",
+            "date": "2024-04-20 15:00:00",
+            "numberOfPlaces": "12"
+        },
+        {
+            "name": "Fit Nation Games",
+            "date": "2025-07-15 12:00:00",
+            "numberOfPlaces": "10"
+        },
+        {
+            "name": "Lift Legends",
+            "date": "2025-08-08 11:00:00",
+            "numberOfPlaces": "9"
+        },
+        {
+            "name": "Iron Strength Battle",
+            "date": "2024-10-30 14:00:00",
+            "numberOfPlaces": "22"
+        },
+        {
+            "name": "Pump Power Meet",
+            "date": "2025-09-20 09:00:00",
+            "numberOfPlaces": "10"
         }
     ]
 }

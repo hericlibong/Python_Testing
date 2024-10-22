@@ -1,16 +1,129 @@
-{"clubs":[
-    {
-        "name":"Simply Lift",
-        "email":"john@simplylift.co",
-        "points":"13"
-    },
-    {
-        "name":"Iron Temple",
-        "email": "admin@irontemple.com",
-        "points":"4"
-    },
-    {   "name":"She Lifts",
-        "email": "kate@shelifts.co.uk",
-        "points":"12"
-    }
-]}
+{
+    "clubs": [
+        {
+            "name": "Simply Lift",
+            "email": "john@simplylift.co",
+            "points": "13"
+        },
+        {
+            "name": "Iron Temple",
+            "email": "admin@irontemple.com",
+            "points": "4"
+        },
+        {
+            "name": "She Lifts",
+            "email": "kate@shelifts.co.uk",
+            "points": "12"
+        },
+        {
+            "name": "Mighty Muscles",
+            "email": "mighty@muscles.com",
+            "points": "18"
+        },
+        {
+            "name": "Power House",
+            "email": "info@powerhouse.com",
+            "points": "25"
+        },
+        {
+            "name": "Beast Mode",
+            "email": "beast@mode.com",
+            "points": "40"
+        },
+        {
+            "name": "Lift Masters",
+            "email": "lift@masters.com",
+            "points": "22"
+        },
+        {
+            "name": "Strength Station",
+            "email": "info@strengthstation.com",
+            "points": "17"
+        },
+        {
+            "name": "Fit Zone",
+            "email": "info@fitzone.com",
+            "points": "29"
+        },
+        {
+            "name": "Max Power",
+            "email": "max@power.com",
+            "points": "35"
+        },
+        {
+            "name": "Fitness Freaks",
+            "email": "fitness@freaks.com",
+            "points": "15"
+        },
+        {
+            "name": "Pump Nation",
+            "email": "info@pumpnation.com",
+            "points": "32"
+        },
+        {
+            "name": "Titan Gym",
+            "email": "info@titangym.com",
+            "points": "28"
+        },
+        {
+            "name": "Bulk Brothers",
+            "email": "bulk@brothers.com",
+            "points": "24"
+        },
+        {
+            "name": "Lift Legends",
+            "email": "legends@lift.com",
+            "points": "10"
+        },
+        {
+            "name": "Power Surge",
+            "email": "power@surge.com",
+            "points": "45"
+        },
+        {
+            "name": "Alpha Strength",
+            "email": "alpha@strength.com",
+            "points": "18"
+        },
+        {
+            "name": "Muscle Factory",
+            "email": "info@musclefactory.com",
+            "points": "22"
+        },
+        {
+            "name": "Iron Paradise",
+            "email": "paradise@iron.com",
+            "points": "14"
+        },
+        {
+            "name": "Flex Force",
+            "email": "info@flexforce.com",
+            "points": "31"
+        },
+        {
+            "name": "Ultimate Power",
+            "email": "ultimate@power.com",
+            "points": "19"
+        },
+        {
+            "name": "Pump Palace",
+            "email": "palace@pump.com",
+            "points": "27"
+        },
+        {
+            "name": "Fit Warriors",
+            "email": "warriors@fit.com",
+            "points": "21"
+        },
+        {
+            "name": "Gain Nation",
+            "email": "gain@nation.com",
+            "points": "36"
+        },
+        {
+            "name": "Strength Elite",
+            "email": "elite@strength.com",
+            "points": "23"
+        }
+    ]
+}
