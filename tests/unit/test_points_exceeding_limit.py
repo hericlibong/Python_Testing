@@ -9,7 +9,7 @@ def client():
 
 def test_points_exceeding_limit(client):
     response = client.post('/purchasePlaces', data={
-        'competition': 'Spring Festival', 
+        'competition': 'Winter Games', 
         'club': 'Simply Lift', 
         'places': '50'  # Supposons que le club n'ait pas assez de points
     })

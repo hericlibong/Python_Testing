@@ -9,7 +9,7 @@ def client():
 
 def test_integration_points_exceeding_limit(client):
     response = client.post('/purchasePlaces', data={
-        'competition': 'Spring Festival', 
+        'competition': 'Winter Games', 
         'club': 'Simply Lift', 
         'places': '50'  # Test de bout en bout
     })
