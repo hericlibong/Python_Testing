@@ -5,6 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Points Display Board</title>
 </head>
+<!-- CSS intégré pour les styles -->
+<style>
+    .grey-background {
+        background-color: #f0f0f0;
+    }
+</style>
+
 <body>
     
     <h1>Club Points Board</h1>
@@ -14,34 +21,24 @@
             
         </ul>
     </nav>
-    <table border="1" readonly>
-              <tr>
 
-                <th>Club Name</th>
-
-                 <th>Points Available</th>
-
-              </tr>
-
-           </thead>
-
-            <tbody>
-
-                 {% for club in clubs %}
-
-                      <tr>
-
-                           <td>{{ club['name'] }}</td>
-
-                            <td>{{ club['points'] }}</td>
-
-                         </tr>
-
-                      {% endfor %}
-
-                   
-        </tbody>
-    </table>
+    <!-- Afficher la liste des clubs -->
+<table border="1" readonly>
+    <thead>
+        <tr>
+            <th>Club Name</th>
+            <th>Points Available</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for club in clubs %}
+            <tr {% if loop.index is even %}class="grey-background"{% endif %}>
+                <td>{{ club['name'] }}</td>
+                <td>{{ club['points'] }}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
     
 </body>
 </html>

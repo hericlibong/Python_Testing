@@ -100,7 +100,8 @@ def purchasePlaces():
 def pointBoard():
     return render_template('points_board.html', clubs=clubs)
 
-
+    
+    
 @app.route('/logout')
 def logout():
     session.clear()
