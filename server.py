@@ -80,20 +80,33 @@ def purchasePlaces():
     # Vérification des places et des points disponibles
     club_points = int(club['points'])
     available_places = int(competition['numberOfPlaces'])
-    
+
+    # Ajout d'un champ pour suivre les réservations par club pour chaque compétition
+    if "reservations" not in competition:
+        competition["reservations"] = {}
+
+    # Nombre de places déjà réservées par ce club pour cette compétition
+    total_reserved_by_club = competition["reservations"].get(club_name, 0)
+    total_requested = total_reserved_by_club + places_requested
+
     if places_requested > club_points:
         flash("You don't have enough points to complete this booking.")
     elif places_requested > available_places:
         flash("Not enough places available for this competition.")
-    elif places_requested > 12:
+    elif total_requested > 12:
         flash("You cannot book more than 12 places per competition.")
     else:
-        # Mise à jour si les conditions sont remplies
+        # Mise à jour des points et des places disponibles
         club['points'] = str(club_points - places_requested)
         competition['numberOfPlaces'] = str(available_places - places_requested)
+
+        # Mise à jour des réservations
+        competition["reservations"][club_name] = total_requested
+
         flash(f'Successfully booked {places_requested} places for {competition_name}!')
     
     return render_template('welcome.html', club=club, competitions=competitions)
+
 
 # Route pour afficher le tableau des points
 @app.route('/pointBoard')
