@@ -62,7 +62,17 @@ def book(competition, club):
 def purchasePlaces():
     competition_name = request.form['competition']
     club_name = request.form['club']
-    places_requested = int(request.form['places'])
+
+    # Vérifier les valeurs positives pour la réservation des places
+    try:
+        places_requested = int(request.form['places'])
+        if places_requested <= 0:
+            flash("Please enter a positive number of places.")
+            return redirect(url_for('book', competition=competition_name.replace(" ", "-"), club=club_name.replace(" ", "-")))
+    except ValueError:
+        flash("Invalid number of places. Please enter a valid positif number in the field.")
+        return redirect(url_for('book', competition=competition_name.replace(" ", "-"), club=club_name.replace(" ", "-")))
+
 
     competition = next((c for c in competitions if c['name'] == competition_name), None)
     club = next((c for c in clubs if c['name'] == club_name), None)
