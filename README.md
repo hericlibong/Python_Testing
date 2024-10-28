@@ -45,7 +45,8 @@
      locust -f locustfile.py
      ```
     **Locust Performance Report**
-    You can view the [Locust performance report for 75 users](locust_reports/locust_report.html).
+    Les rapports de performances Locust sont dans le dossier [locust_report](https://github.com/hericlibong/Python_Testing/blob/feature/initial-setup/locust_report)
+    You can view the [Locust performance report for 75 users](https://github.com/hericlibong/Python_Testing/blob/feature/initial-setup/locust_report/RAPPORT_75_users.md).
 
 
 7. Current Setup
