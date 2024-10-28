@@ -38,6 +38,8 @@
      coverage run -m pytest tests/
      coverage report
      ```
+   - **Tests report**
+   - Vous pouvez trouver le rapport complet des [tests effectués](docs/TESTS_DOCUMENTATION.md) dans le dossier docs   
 
 6. Performance Testing
    - **Locust**: To simulate load tests, ensure Locust is installed. Run Locust with:
@@ -45,8 +47,8 @@
      locust -f locustfile.py
      ```
     **Locust Performance Report**
-    Les rapports de performances Locust sont dans le dossier [locust_report](https://github.com/hericlibong/Python_Testing/blob/feature/initial-setup/locust_report)
-    You can view the [Locust performance report for 75 users](https://github.com/hericlibong/Python_Testing/blob/feature/initial-setup/locust_report/RAPPORT_75_users.md).
+   - The Locust performance reports are in the [locust_report](https://github.com/hericlibong/Python_Testing/blob/feature/initial-setup/locust_report) folder.
+   - You can view the [Locust performance report for 75 users](https://github.com/hericlibong/Python_Testing/blob/feature/initial-setup/locust_report/RAPPORT_75_users.md).
 
 
 7. Current Setup
