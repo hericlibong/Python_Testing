@@ -1,32 +1,34 @@
 import json
-from flask import Flask,render_template,request,redirect,flash,url_for, session
+from flask import Flask, render_template, request, redirect, flash, url_for, session
 from datetime import datetime
 
 
-def loadClubs():
+def load_clubs():
     with open('clubs.json') as c:
-         listOfClubs = json.load(c)['clubs']
-         return listOfClubs
+        list_of_clubs = json.load(c)['clubs']
+        return list_of_clubs
 
 
-def loadCompetitions():
+def load_competitions():
     with open('competitions.json') as comps:
-         listOfCompetitions = json.load(comps)['competitions']
-         return listOfCompetitions
+        list_of_competitions = json.load(comps)['competitions']
+        return list_of_competitions
 
 
 app = Flask(__name__)
 app.secret_key = 'something_special'
 
-competitions = loadCompetitions()
-clubs = loadClubs()
+competitions = load_competitions()
+clubs = load_clubs()
+
 
 @app.route('/')
 def index():
     return render_template('index.html')
 
-@app.route('/showSummary',methods=['POST'])
-def showSummary():
+
+@app.route('/showSummary', methods=['POST'])
+def show_summary():
     club = next((club for club in clubs if club['email'] == request.form['email']), None)
     if club:
         return render_template('welcome.html', club=club, competitions=competitions)
@@ -37,29 +39,29 @@ def showSummary():
 
 @app.route('/book/<competition>/<club>')
 def book(competition, club):
-    # reconstruire les urls pour les espaces
+    # Reconstruire les URLs pour les espaces
     competition = competition.replace('-', ' ')
     club = club.replace('-', ' ')
-    
-    foundClub = next((c for c in clubs if c['name'] == club), None)
-    foundCompetition = next((c for c in competitions if c['name'] == competition), None)
-    
-    if not foundClub or not foundCompetition:
+
+    found_club = next((c for c in clubs if c['name'] == club), None)
+    found_competition = next((c for c in competitions if c['name'] == competition), None)
+
+    if not found_club or not found_competition:
         flash("Club or competition not found.")
         return redirect(url_for('index'))
-    
+
     # Vérification de la date de la compétition
-    competition_date = datetime.strptime(foundCompetition['date'], "%Y-%m-%d %H:%M:%S")
+    competition_date = datetime.strptime(found_competition['date'], "%Y-%m-%d %H:%M:%S")
     if competition_date < datetime.now():
         flash("This competition has already taken place. No reservations allowed.")
-        return render_template('welcome.html', club=foundClub, competitions=competitions)
-    
+        return render_template('welcome.html', club=found_club, competitions=competitions)
+
     # Si la date est valide, afficher la page de réservation
-    return render_template('booking.html', club=foundClub, competition=foundCompetition)
+    return render_template('booking.html', club=found_club, competition=found_competition)
 
 
 @app.route('/purchasePlaces', methods=['POST'])
-def purchasePlaces():
+def purchase_places():
     competition_name = request.form['competition']
     club_name = request.form['club']
 
@@ -68,11 +70,12 @@ def purchasePlaces():
         places_requested = int(request.form['places'])
         if places_requested <= 0:
             flash("Please enter a positive number of places.")
-            return redirect(url_for('book', competition=competition_name.replace(" ", "-"), club=club_name.replace(" ", "-")))
+            return redirect(url_for('book', competition=competition_name.replace(" ", "-"),
+                                    club=club_name.replace(" ", "-")))
     except ValueError:
-        flash("Invalid number of places. Please enter a valid positif number in the field.")
-        return redirect(url_for('book', competition=competition_name.replace(" ", "-"), club=club_name.replace(" ", "-")))
-
+        flash("Invalid number of places. Please enter a valid positive number in the field.")
+        return redirect(url_for('book', competition=competition_name.replace(" ", "-"),
+                                club=club_name.replace(" ", "-")))
 
     competition = next((c for c in competitions if c['name'] == competition_name), None)
     club = next((c for c in clubs if c['name'] == club_name), None)
@@ -80,7 +83,7 @@ def purchasePlaces():
     if not competition or not club:
         flash("An error occurred. Please try again.")
         return redirect(url_for('index'))
-    
+
     # Convertir la date de la compétition et vérifier si elle est passée
     competition_date = datetime.strptime(competition['date'], "%Y-%m-%d %H:%M:%S")
     if competition_date < datetime.now():
@@ -114,22 +117,17 @@ def purchasePlaces():
         competition["reservations"][club_name] = total_requested
 
         flash(f'Successfully booked {places_requested} places for {competition_name}!')
-    
+
     return render_template('welcome.html', club=club, competitions=competitions)
 
 
 # Route pour afficher le tableau des points
 @app.route('/pointBoard')
-def pointBoard():
+def point_board():
     return render_template('points_board.html', clubs=clubs)
 
-    
-    
+
 @app.route('/logout')
 def logout():
     session.clear()
     return redirect(url_for('index'))
-
-
-# if __name__ == '__main__':
-#     app.run(debug=True)

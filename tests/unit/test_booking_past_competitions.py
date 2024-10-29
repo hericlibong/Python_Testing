@@ -1,7 +1,6 @@
 import pytest
-from flask import Flask
 from server import app
-from datetime import datetime
+
 
 @pytest.fixture
 def client():
@@ -18,7 +17,7 @@ def test_booking_past_competitions(client):
 
 
 # Test pour les compétitions en cours ou futures
-def  test_booking_future_competition(client):
+def test_booking_future_competition(client):
     response = client.get('/book/Summer-Bash/Simply-Lift', follow_redirects=True)
 
     # Vérifier que la page de réservation s'affiche correctement pour la competition

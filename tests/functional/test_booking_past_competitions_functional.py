@@ -1,11 +1,12 @@
 import pytest
-from flask import Flask
 from server import app
+
 
 @pytest.fixture
 def client():
     with app.test_client() as client:
         yield client
+
 
 # Test fonctionnel : tenter de réserver une compétition passée
 def test_attempt_booking_past_competition(client):

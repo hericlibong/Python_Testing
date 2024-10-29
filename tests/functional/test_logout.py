@@ -1,11 +1,12 @@
 import pytest
-from flask import Flask
 from server import app
+
 
 @pytest.fixture
 def client():
     with app.test_client() as client:
         yield client
+
 
 # Tester la déconnexion
 def test_logout(client):

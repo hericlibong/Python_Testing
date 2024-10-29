@@ -2,6 +2,7 @@ from locust import HttpUser, task, between
 import json
 import random
 
+
 class GudliftUser(HttpUser):
     # Temps d'attente entre 1 et 5 secondes entre chaque tâche
     wait_time = between(1, 5)
@@ -32,7 +33,7 @@ class GudliftUser(HttpUser):
         # Choisir une compétition et un club au hasard
         competition = random.choice(self.competitions)
         club = random.choice(self.clubs)
-        places = str(random.randint(1, 14))  
+        places = str(random.randint(1, 14))
 
         # Effectuer la réservation
         response = self.client.post("/purchasePlaces", data={
@@ -48,10 +49,6 @@ class GudliftUser(HttpUser):
             print(f"{club['name']} tried to book {places} places but doesn't have enough points")
         elif "This competition has already taken place" in response.text:
             print(f"{club['name']} Attempt to book {places} places for past competition: {competition}")
-            print ("Answer : 'This competition has already taken place. No reservations allowed'.")
+            print("Answer : 'This competition has already taken place. No reservations allowed'.")
         else:
             print(f"Booking failed for {club['name']} in {competition}")
-
-
-
-
