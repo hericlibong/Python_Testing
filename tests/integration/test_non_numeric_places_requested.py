@@ -12,7 +12,7 @@ def client():
 def test_non_numeric_places_requested(client):
     response = client.post('/purchasePlaces', data={
         'competition': 'Titan Challenge',
-        'club': 'Power Surge',
+        'club': 'Max Power',
         'places': 'abc'  # End-to-end test
     }, follow_redirects=True)
-    assert b"Invalid number of places. Please enter a valid positif number in the field." in response.data
+    assert b"Invalid number of places. Please enter a valid positive number in the field." in response.data
