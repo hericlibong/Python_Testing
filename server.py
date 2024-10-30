@@ -123,7 +123,7 @@ def purchase_places():
 
 # Route pour afficher le tableau des points
 @app.route('/pointBoard')
-def point_board():
+def pointBoard():
     return render_template('points_board.html', clubs=clubs)
 
 
